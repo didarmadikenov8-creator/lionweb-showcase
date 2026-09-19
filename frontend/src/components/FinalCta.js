@@ -56,6 +56,26 @@ export default function FinalCta() {
             >
               WHATSAPP ↗
             </a>
+            <span className="w-6 h-px bg-gold/50 hidden md:block" />
+            <a
+              href={CONTACT.instagram}
+              target="_blank"
+              rel="noreferrer"
+              data-testid="final-instagram"
+              className="text-paper/70 hover:text-gold transition-colors"
+            >
+              INSTAGRAM ↗
+            </a>
+            <span className="w-6 h-px bg-gold/50 hidden md:block" />
+            <a
+              href="https://lionweb.kz"
+              target="_blank"
+              rel="noreferrer"
+              data-testid="final-site"
+              className="text-paper/70 hover:text-gold transition-colors"
+            >
+              LIONWEB.KZ
+            </a>
           </div>
         </div>
       </div>

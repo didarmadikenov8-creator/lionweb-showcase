@@ -21,14 +21,26 @@ function Portrait({ m, i }) {
         ПОРТРЕТ 0{i + 1} — ЗАМЕНИТЕ ФОТО
       </span>
       <span className="absolute top-6 right-6 w-10 h-10 border-t border-r border-gold/40" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <span className="font-display font-bold text-[24vw] lg:text-[10vw] leading-none" style={{ color: m.tone, opacity: 0.85 }}>
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+        <motion.span
+          key={m.initials}
+          initial={{ scale: 1.22, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.85 }}
+          transition={{ duration: 0.8, ease: EASE }}
+          className="font-display font-bold text-[24vw] lg:text-[10vw] leading-none"
+          style={{ color: m.tone }}
+        >
           {m.initials}
-        </span>
+        </motion.span>
       </div>
-      <span className="absolute bottom-6 left-6 font-mono text-[13px] md:text-[15px] tracking-[0.15em] text-gold font-medium">
+      <motion.span
+        initial={{ x: -12, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
+        className="absolute bottom-6 left-6 font-mono text-[13px] md:text-[15px] tracking-[0.15em] text-gold font-medium"
+      >
         {m.role.toUpperCase()}
-      </span>
+      </motion.span>
     </div>
   );
 }

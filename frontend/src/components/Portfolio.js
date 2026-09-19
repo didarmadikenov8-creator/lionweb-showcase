@@ -3,18 +3,113 @@ import { motion, useMotionValue, useSpring, useTransform, useInView, AnimatePres
 import { FadeUp, RevealLineInView, EASE } from "./motion-primitives";
 
 const PROJECTS = [
-  { id: "kidstools", index: "01", name: "KIDSTOOLS", category: "Интернет-магазин", price: "750 000 ₸", time: "10–12 дней", url: "https://kidstools.kz/", tone: "#C5A059" },
-  { id: "ermart", index: "02", name: "ERMART", category: "Интернет-магазин", price: "300 000 ₸", time: "10–12 дней", url: "https://ermart.kz/", tone: "#B0713F" },
-  { id: "baekkey", index: "03", name: "BAEKKEY", category: "Интернет-магазин", price: "500 000 ₸", time: "10–12 дней", url: "https://www.baekkey.kz/", tone: "#8C6D3F" },
-  { id: "salsabil", index: "04", name: "SALSABIL", category: "Интернет-магазин", price: "450 000 ₸", time: "7–14 дней", url: "https://salsabil.kz/", tone: "#D8C9A3" },
-  { id: "mamibiomed", index: "05", name: "MAMIBIOMED", category: "Интернет-магазин", price: "700 000 ₸", time: "7–14 дней", url: "https://arystan.mamibiomed.com/", tone: "#9A8F7A" },
-  { id: "agroalem", index: "06", name: "AGROALEM", category: "Интернет-магазин", price: null, time: null, url: null, tone: "#6B6B4F" },
+  { id: "kidstools", index: "01", name: "KIDSTOOLS", category: "Интернет-магазин", price: "750 000 ₸", time: "10–12 дней", url: "https://kidstools.kz/", tone: "#C5A059", variant: "shop" },
+  { id: "ermart", index: "02", name: "ERMART", category: "Интернет-магазин", price: "300 000 ₸", time: "10–12 дней", url: "https://ermart.kz/", tone: "#B0713F", variant: "hero" },
+  { id: "baekkey", index: "03", name: "BAEKKEY", category: "Интернет-магазин", price: "500 000 ₸", time: "10–12 дней", url: "https://www.baekkey.kz/", tone: "#8C6D3F", variant: "shop2" },
+  { id: "salsabil", index: "04", name: "SALSABIL", category: "Интернет-магазин", price: "450 000 ₸", time: "7–14 дней", url: "https://salsabil.kz/", tone: "#D8C9A3", variant: "catalog" },
+  { id: "mamibiomed", index: "05", name: "MAMIBIOMED", category: "Интернет-магазин", price: "700 000 ₸", time: "7–14 дней", url: "https://arystan.mamibiomed.com/", tone: "#9A8F7A", variant: "shop2" },
+  { id: "agroalem", index: "06", name: "AGROALEM", category: "Интернет-магазин", price: null, time: null, url: null, tone: "#6B6B4F", variant: "soon" },
 ];
 
 const BG = ["#080808", "#0B0A07", "#0C0A06", "#0A0806", "#0B0A08", "#090806"];
 
-/* Editorial placeholder visual — replace with a real project screenshot:
-   render an <img src="..." /> inside the frame below. */
+/* Editorial placeholder mockups — replace with real project screenshots:
+   drop an <img src="..." className="absolute inset-0 w-full h-full object-cover" />
+   inside the frame below. */
+function ShopUI({ p, alt }) {
+  const tile = (i) => (
+    <div key={i} className="border border-white/[0.08] bg-white/[0.04] p-1.5">
+      <div className="h-8 md:h-10" style={{ background: i % 3 === 0 ? `${p.tone}33` : "rgba(255,255,255,0.05)" }} />
+      <div className="h-1 w-2/3 mt-1.5 bg-white/25" />
+      <div className="h-1 w-1/3 mt-1" style={{ background: `${p.tone}99` }} />
+    </div>
+  );
+  if (alt)
+    return (
+      <div className="absolute inset-x-4 md:inset-x-6 top-12 md:top-14 bottom-8 md:bottom-10">
+        <div className="h-8 border-b border-white/[0.07] flex items-center justify-between px-1">
+          <span className="h-1.5 w-16 bg-white/20" />
+          <span className="relative w-4 h-4 border border-gold/50">
+            <span className="absolute -top-1 -right-1 w-2 h-2 bg-gold" />
+          </span>
+        </div>
+        <div className="mt-2.5 flex gap-2.5 h-[calc(100%-3rem)]">
+          <div className="w-1/4 border border-white/[0.08] bg-white/[0.03] p-2 space-y-2">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className={`h-1 ${i === 0 ? "w-3/4 bg-gold/60" : "w-2/3 bg-white/20"}`} />
+            ))}
+          </div>
+          <div className="flex-1 grid grid-cols-2 gap-2">{[0, 1, 2, 3].map((i) => tile(i))}</div>
+        </div>
+      </div>
+    );
+  return (
+    <div className="absolute inset-x-4 md:inset-x-6 top-12 md:top-14 bottom-8 md:bottom-10 grid grid-cols-4 gap-2">
+      <div className="border border-white/[0.08] bg-white/[0.03] p-2 space-y-2">
+        {[0, 1, 2, 3, 4].map((i) => (
+          <div key={i} className={`h-1 ${i === 0 ? "w-full bg-gold/60" : "w-2/3 bg-white/20"}`} />
+        ))}
+      </div>
+      <div className="col-span-3 grid grid-cols-2 gap-2">{[0, 1, 2, 3].map((i) => tile(i))}</div>
+    </div>
+  );
+}
+
+function HeroUI({ p }) {
+  return (
+    <div className="absolute inset-x-4 md:inset-x-6 top-12 md:top-14 bottom-8 md:bottom-10 flex flex-col justify-between">
+      <div className="space-y-2">
+        <div className="h-2.5 w-1/2" style={{ background: `${p.tone}cc` }} />
+        <div className="h-2.5 w-1/3 bg-white/70" />
+        <div className="h-1 w-1/4 bg-white/25 mt-1" />
+      </div>
+      <div className="flex items-end justify-between gap-3">
+        <div className="grid grid-cols-3 gap-2 flex-1">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="h-10 md:h-14 border border-white/[0.08] bg-white/[0.04]" />
+          ))}
+        </div>
+        <span className="shrink-0 px-3 py-1.5 font-mono text-[8px] tracking-[0.15em] bg-gold text-ink">В КОРЗИНУ</span>
+      </div>
+    </div>
+  );
+}
+
+function CatalogUI({ p }) {
+  return (
+    <div className="absolute inset-x-4 md:inset-x-6 top-12 md:top-14 bottom-8 md:bottom-10 flex flex-col gap-2.5">
+      <div className="grid grid-cols-2 gap-x-4 gap-y-2">
+        {["01", "02", "03", "04"].map((n) => (
+          <div key={n} className="border-b border-white/[0.08] pb-1.5 flex items-center justify-between">
+            <span className="font-mono text-[8px] tracking-[0.2em] text-paper/50">РАЗДЕЛ {n}</span>
+            <span className="h-1 w-8" style={{ background: `${p.tone}99` }} />
+          </div>
+        ))}
+      </div>
+      <div className="flex-1 border border-white/[0.08] bg-white/[0.03] p-2 flex gap-2">
+        <div className="w-1/3" style={{ background: `${p.tone}22` }} />
+        <div className="flex-1 space-y-1.5 pt-1">
+          <div className="h-1.5 w-2/3 bg-white/25" />
+          <div className="h-1.5 w-1/2 bg-white/15" />
+          <div className="h-1 w-1/3 bg-white/10" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SoonUI() {
+  return (
+    <div className="absolute inset-x-6 md:inset-x-12 top-1/2 -translate-y-1/2 border border-dashed border-white/20 p-4 md:p-6">
+      <div className="font-mono text-[9px] tracking-[0.3em] text-gold">В РАЗРАБОТКЕ</div>
+      <div className="mt-3 space-y-2">
+        <div className="h-1.5 w-1/2 bg-white/15" />
+        <div className="h-1.5 w-1/3 bg-white/10" />
+      </div>
+    </div>
+  );
+}
+
 function ProjectVisual({ p }) {
   return (
     <div
@@ -35,25 +130,24 @@ function ProjectVisual({ p }) {
         {p.index}
       </span>
 
-      <div className="absolute inset-0 flex items-center justify-center px-6">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <span
-          className="font-display font-bold uppercase text-center leading-[0.92]"
-          style={{ fontSize: p.name.length > 7 ? "4.6vw" : "6.4vw", color: p.tone, opacity: 0.9 }}
+          className="font-display font-bold uppercase leading-none whitespace-nowrap"
+          style={{
+            fontSize: `clamp(1.25rem, ${p.name.length > 7 ? "2.2vw" : "3vw"}, 3.4rem)`,
+            color: p.tone,
+            opacity: 0.3,
+          }}
         >
           {p.name}
         </span>
       </div>
 
-      <div className="absolute left-6 bottom-14 space-y-2 hidden md:block">
-        <div className="w-36 h-1.5 bg-white/10" />
-        <div className="w-24 h-1.5 bg-white/[0.07]" />
-        <div className="w-32 h-1.5 bg-white/[0.05]" />
-      </div>
-      <div className="absolute right-6 top-16 w-44 h-28 border border-white/[0.08] hidden md:grid grid-cols-3 gap-px p-2">
-        {Array.from({ length: 9 }).map((_, i) => (
-          <div key={i} className="bg-white/[0.04]" />
-        ))}
-      </div>
+      {p.variant === "shop" && <ShopUI p={p} />}
+      {p.variant === "shop2" && <ShopUI p={p} alt />}
+      {p.variant === "hero" && <HeroUI p={p} />}
+      {p.variant === "catalog" && <CatalogUI p={p} />}
+      {p.variant === "soon" && <SoonUI />}
 
       <span className="absolute left-6 bottom-5 font-mono text-[8px] tracking-[0.3em] text-paper/25">
         ВИЗУАЛ ПРОЕКТА — ЗАМЕНИТЕ СКРИНШОТОМ

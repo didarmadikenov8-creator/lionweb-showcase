@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState, Component } from "react";
 import Lenis from "lenis";
-import { useReducedMotion, MotionConfig } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring, MotionConfig } from "framer-motion";
 import Preloader from "./components/Preloader";
 import Cursor from "./components/Cursor";
 import Nav from "./components/Nav";
+import FloatingCta from "./components/FloatingCta";
 import Hero from "./components/Hero";
 import Statement from "./components/Statement";
 import Portfolio from "./components/Portfolio";
@@ -40,6 +41,24 @@ class ErrorBoundary extends Component {
   }
 }
 
+function ScrollRail() {
+  const { scrollYProgress } = useScroll();
+  const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 22 });
+  return (
+    <div
+      className="fixed left-5 top-1/2 -translate-y-1/2 z-[140] hidden lg:flex flex-col items-center gap-4 pointer-events-none"
+      aria-hidden="true"
+    >
+      <span className="font-mono text-[9px] tracking-[0.35em] text-paper/30" style={{ writingMode: "vertical-rl" }}>
+        SCROLL
+      </span>
+      <div className="w-px h-44 bg-white/10 relative overflow-hidden">
+        <motion.div className="absolute inset-0 bg-gold origin-top" style={{ scaleY }} />
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const [ready, setReady] = useState(false);
   const reduced = useReducedMotion();
@@ -72,6 +91,7 @@ export default function App() {
           <Preloader onDone={onDone} />
           <Cursor />
           <div className="grain" aria-hidden="true" />
+          <ScrollRail />
           <Nav ready={ready} />
           <main>
             <Hero ready={ready} />
@@ -87,6 +107,7 @@ export default function App() {
             <FinalCta />
           </main>
           <Footer />
+          <FloatingCta />
         </div>
       </MotionConfig>
     </ErrorBoundary>

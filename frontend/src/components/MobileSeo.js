@@ -4,6 +4,24 @@ import { FadeUp, CountUp, useIsDesktop, EASE } from "./motion-primitives";
 
 const QUERIES = ["интернет-магазин", "корпоративный сайт", "SEO продвижение"];
 
+function AppStoreGlyph({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      <circle cx="12" cy="12" r="10.5" />
+      <path d="M8.2 15.6 12 8l3.8 7.6M9.4 13.4h5.2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function PlayGlyph({ className }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
+      <path d="M6.5 4.5 18 12 6.5 19.5v-15Z" strokeLinejoin="round" />
+      <path d="M6.5 4.5 13 12l-6.5 7.5" strokeLinejoin="round" opacity="0.6" />
+    </svg>
+  );
+}
+
 function MiniShot({ variant }) {
   return (
     <div className="w-12 md:w-[3.6rem] h-24 md:h-28 rounded-md border border-white/10 bg-[#101010] overflow-hidden shrink-0">
@@ -44,11 +62,11 @@ function PhoneFrame({ android, children, floatDelay }) {
     <motion.div
       animate={reduced ? {} : { y: [0, -10, 0] }}
       transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: floatDelay }}
-      className="relative w-[8.5rem] md:w-40 shrink-0"
+      className="relative w-[7.25rem] md:w-40 shrink-0"
       style={{ filter: "drop-shadow(0 34px 34px rgba(0,0,0,0.55))" }}
     >
       <div
-        className={`relative p-[3px] ${android ? "rounded-[1.9rem] md:rounded-[2.2rem]" : "rounded-[2.4rem] md:rounded-[2.8rem]"}`}
+        className={`relative p-[3px] ${android ? "rounded-[1.7rem] md:rounded-[2.2rem]" : "rounded-[2.1rem] md:rounded-[2.8rem]"}`}
         style={{
           background: android
             ? "linear-gradient(150deg, #3a3f45, #0d0f11 45%, #23262b 78%, #08090a)"
@@ -69,7 +87,7 @@ function PhoneFrame({ android, children, floatDelay }) {
         )}
         <div
           className={`relative w-full aspect-[9/19] bg-[#0B0B0B] overflow-hidden ${
-            android ? "rounded-[1.7rem] md:rounded-[2rem]" : "rounded-[2.25rem] md:rounded-[2.6rem]"
+            android ? "rounded-[1.5rem] md:rounded-[2rem]" : "rounded-[1.9rem] md:rounded-[2.6rem]"
           }`}
         >
           {children}
@@ -95,7 +113,7 @@ function StatusBar({ time, android }) {
 function AppStoreScreen() {
   return (
     <div className="relative h-full flex flex-col font-body" data-testid="phone-ios">
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-14 md:w-16 h-3.5 md:h-4 bg-black rounded-full z-20" />
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-12 md:w-16 h-3 md:h-4 bg-black rounded-full z-20" />
       <StatusBar time="9:41" />
       <div className="px-3 pt-2.5 pb-1 flex items-center justify-between">
         <span className="text-[7px] md:text-[8px] font-semibold text-[#0A84FF]">‹ Магазин</span>
@@ -167,7 +185,7 @@ function PlayScreen() {
           <span className="text-white font-semibold">4,8</span> ★
         </span>
         <span>12 МБ</span>
-        <span className="text-[#188038] font-semibold">Установлено 100 тыс.+</span>
+        <span className="text-[#4CB964] font-semibold">100 тыс.+</span>
       </div>
       <div className="px-3 mt-2 flex items-center gap-2">
         <span className="inline-block bg-[#188038] text-white text-[8px] md:text-[9px] font-semibold rounded-md px-4 py-[4px] tracking-[0.04em]">
@@ -189,6 +207,26 @@ function PlayScreen() {
   );
 }
 
+function StoreBadge({ store }) {
+  const ios = store === "ios";
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: EASE, delay: ios ? 0.55 : 0.7 }}
+      className={`flex items-center gap-2.5 border border-white/15 bg-coal/80 px-3.5 py-2 md:px-4 ${ios ? "" : ""}`}
+      data-testid={ios ? "label-appstore" : "label-googleplay"}
+    >
+      {ios ? <AppStoreGlyph className="w-4 h-4 md:w-[1.15rem] md:h-[1.15rem] text-gold shrink-0" /> : <PlayGlyph className="w-4 h-4 md:w-[1.15rem] md:h-[1.15rem] text-gold shrink-0" />}
+      <span className="font-body text-left leading-tight">
+        <span className="block text-[8px] md:text-[9px] text-paper/40 uppercase tracking-[0.18em]">Доступно в</span>
+        <span className="block text-[12px] md:text-[15px] text-paper/85">{ios ? "App Store" : "Google Play"}</span>
+      </span>
+    </motion.div>
+  );
+}
+
 function IphoneMock() {
   return (
     <motion.div
@@ -201,9 +239,7 @@ function IphoneMock() {
       <PhoneFrame floatDelay={0}>
         <AppStoreScreen />
       </PhoneFrame>
-      <div className="font-body text-[13px] md:text-[15px] text-paper/70" data-testid="label-appstore">
-        Доступно в App Store
-      </div>
+      <StoreBadge store="ios" />
     </motion.div>
   );
 }
@@ -220,9 +256,7 @@ function AndroidMock() {
       <PhoneFrame android floatDelay={1}>
         <PlayScreen />
       </PhoneFrame>
-      <div className="font-body text-[13px] md:text-[15px] text-paper/70" data-testid="label-googleplay">
-        Доступно в Google Play
-      </div>
+      <StoreBadge store="play" />
     </motion.div>
   );
 }
@@ -252,7 +286,7 @@ export default function MobileSeo() {
               Проектируем и разрабатываем приложения — от интерфейса до публикации в App Store и Google Play.
             </p>
           </FadeUp>
-          <div className="mt-12 flex items-end gap-6 md:gap-12">
+          <div className="mt-12 flex items-end gap-5 md:gap-12">
             <IphoneMock />
             <AndroidMock />
           </div>

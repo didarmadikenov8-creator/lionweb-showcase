@@ -20,14 +20,22 @@ function Chip({ selected, onClick, children, testid }) {
     <motion.button
       onClick={onClick}
       data-testid={testid}
-      whileTap={{ scale: 0.96 }}
+      whileTap={{ scale: 0.95 }}
       className={`relative px-5 py-3 border font-mono text-[13px] md:text-[15px] tracking-[0.08em] uppercase transition-all duration-300 ${
         selected
-          ? "bg-gold text-ink border-gold"
+          ? "bg-gold text-ink border-gold shadow-[0_0_0_3px_rgba(197,160,89,0.18)]"
           : "border-white/15 text-paper/70 hover:border-gold/60 hover:text-paper"
       }`}
     >
       {children}
+      {selected && (
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.35, ease: EASE }}
+          className="absolute left-0 bottom-0 h-[2px] w-full bg-ink origin-left"
+        />
+      )}
     </motion.button>
   );
 }
@@ -379,7 +387,7 @@ export default function Estimator() {
                     data-testid="estimator-whatsapp-cta"
                     className="btn-gold w-full flex justify-between px-8 py-5"
                   >
-                    ПОЛУЧИТЬ РАСЧЁТ <span className="arr">→</span>
+                    ОБСУДИТЬ ПРОЕКТ <span className="arr">→</span>
                   </a>
                 </Magnetic>
                 <a
