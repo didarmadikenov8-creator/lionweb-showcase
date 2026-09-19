@@ -59,6 +59,10 @@ module.exports = {
         coal: '#0B0B0B',
         paper: '#F3F0E9',
         mute: '#8A877F',
+        ivory: {
+          DEFAULT: '#F0EDE5',
+          deep: '#E4E0D4'
+        },
         gold: {
           DEFAULT: '#C5A059',
           light: '#D8BC7E',

@@ -17,15 +17,15 @@ function ServiceAnim({ type, on }) {
   });
   if (type === "browser")
     return (
-      <div className="relative w-28 h-[4.5rem] border border-gold/40 shrink-0">
-        <div className="absolute inset-x-0 top-0 h-3.5 border-b border-gold/40 flex items-center gap-1 px-1.5">
-          <span className="w-1 h-1 rounded-full bg-gold/70" />
-          <span className="w-1 h-1 rounded-full bg-gold/40" />
-          <span className="w-1 h-1 rounded-full bg-gold/25" />
+      <div className="relative w-28 h-[4.5rem] border border-gold-deep/50 shrink-0">
+        <div className="absolute inset-x-0 top-0 h-3.5 border-b border-gold-deep/50 flex items-center gap-1 px-1.5">
+          <span className="w-1 h-1 rounded-full bg-gold-deep/80" />
+          <span className="w-1 h-1 rounded-full bg-gold-deep/50" />
+          <span className="w-1 h-1 rounded-full bg-gold-deep/30" />
         </div>
-        <div className="absolute left-2.5 top-6 w-10 h-1 bg-gold/60 origin-left" style={{ animation: "svc-grow-x 2.6s ease-in-out infinite", ...p() }} />
-        <div className="absolute left-2.5 top-9 w-16 h-1 bg-white/20" />
-        <div className="absolute right-2.5 top-6 w-6 h-8 border border-gold/40" style={{ animation: "svc-rise 3s ease-in-out infinite", ...p(0.3) }} />
+        <div className="absolute left-2.5 top-6 w-10 h-1 bg-gold-deep/70 origin-left" style={{ animation: "svc-grow-x 2.6s ease-in-out infinite", ...p() }} />
+        <div className="absolute left-2.5 top-9 w-16 h-1 bg-ink/20" />
+        <div className="absolute right-2.5 top-6 w-6 h-8 border border-gold-deep/50" style={{ animation: "svc-rise 3s ease-in-out infinite", ...p(0.3) }} />
       </div>
     );
   if (type === "layers")
@@ -34,7 +34,7 @@ function ServiceAnim({ type, on }) {
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="absolute inset-x-4 h-6 border border-gold/50"
+            className="absolute inset-x-4 h-6 border border-gold-deep/60"
             style={{ top: 6 + i * 15, opacity: 1 - i * 0.28, animation: "svc-rise 2.8s ease-in-out infinite", ...p(i * 0.25) }}
           />
         ))}
@@ -44,9 +44,9 @@ function ServiceAnim({ type, on }) {
     return (
       <div className="grid grid-cols-2 gap-1.5 w-24 shrink-0">
         {[0, 1, 2, 3].map((i) => (
-          <div key={i} className="h-9 border border-gold/40 p-1.5" style={{ animation: "svc-rise 2.6s ease-in-out infinite", ...p(i * 0.2) }}>
-            <div className={`h-1 w-3/4 ${i === 0 ? "bg-gold/60" : "bg-white/15"}`} />
-            <div className="h-1 w-1/2 bg-white/10 mt-1" />
+          <div key={i} className="h-9 border border-gold-deep/50 p-1.5" style={{ animation: "svc-rise 2.6s ease-in-out infinite", ...p(i * 0.2) }}>
+            <div className={`h-1 w-3/4 ${i === 0 ? "bg-gold-deep/70" : "bg-ink/20"}`} />
+            <div className="h-1 w-1/2 bg-ink/15 mt-1" />
           </div>
         ))}
       </div>
@@ -57,7 +57,7 @@ function ServiceAnim({ type, on }) {
         {[0, 1, 2].map((i) => (
           <div
             key={i}
-            className="w-5 origin-bottom bg-gold/10 border-b border-gold/60"
+            className="w-5 origin-bottom bg-gold-deep/15 border-b border-gold-deep/70"
             style={{ height: 26 + i * 14, animation: "svc-rise 2.4s ease-in-out infinite", ...p(i * 0.3) }}
           />
         ))}
@@ -67,10 +67,10 @@ function ServiceAnim({ type, on }) {
     return (
       <div className="flex gap-2 items-end shrink-0">
         {[0, 1].map((i) => (
-          <div key={i} className="w-10 h-[4.5rem] border border-gold/50 rounded-md p-1" style={{ animation: "svc-rise 3s ease-in-out infinite", ...p(i * 0.4) }}>
-            <div className="h-1 w-4 bg-gold/50 mx-auto rounded-full mb-1.5" />
-            <div className="h-1.5 bg-white/15 mb-1" />
-            <div className="h-1.5 w-2/3 bg-white/10" />
+          <div key={i} className="w-10 h-[4.5rem] border border-gold-deep/60 rounded-md p-1" style={{ animation: "svc-rise 3s ease-in-out infinite", ...p(i * 0.4) }}>
+            <div className="h-1 w-4 bg-gold-deep/60 mx-auto rounded-full mb-1.5" />
+            <div className="h-1.5 bg-ink/20 mb-1" />
+            <div className="h-1.5 w-2/3 bg-ink/15" />
           </div>
         ))}
       </div>
@@ -80,10 +80,10 @@ function ServiceAnim({ type, on }) {
       {[1, 2, 3].map((i) => (
         <div key={i} className="flex items-center gap-1.5">
           <div
-            className={`h-1.5 origin-left ${i === 1 ? "bg-gold" : "bg-white/15"}`}
+            className={`h-1.5 origin-left ${i === 1 ? "bg-gold-deep" : "bg-ink/20"}`}
             style={{ width: 70 - i * 14, animation: "svc-grow-x 2.6s ease-in-out infinite", ...p(i * 0.2) }}
           />
-          {i === 1 && <span className="text-gold text-[9px] font-mono">↑</span>}
+          {i === 1 && <span className="text-gold-deep text-[9px] font-mono">↑</span>}
         </div>
       ))}
     </div>
@@ -94,20 +94,23 @@ export default function Services() {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="services" className="px-5 md:px-10 py-24 md:py-36">
+    <section
+      id="services"
+      className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ivory text-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
+    >
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ УСЛУГИ ]</div>
+        <div className="font-mono text-[10px] tracking-[0.3em] text-gold-deep">[ УСЛУГИ ]</div>
         <div className="mt-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <h2 className="font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
             Что мы
             <br />
             <span className="md:pl-[8vw] inline-block">создаём</span>
           </h2>
-          <div className="font-mono text-[10px] tracking-[0.3em] text-paper/35 shrink-0">06 НАПРАВЛЕНИЙ</div>
+          <div className="font-mono text-[10px] tracking-[0.3em] text-ink/40 shrink-0">06 НАПРАВЛЕНИЙ</div>
         </div>
       </FadeUp>
 
-      <FadeUp delay={0.1} className="mt-14 md:mt-20 border-t border-b border-white/10 divide-y divide-white/10">
+      <FadeUp delay={0.1} className="mt-14 md:mt-20 border-t border-b border-ink/15 divide-y divide-ink/15">
         {SERVICES.map((s, i) => {
           const open = active === i;
           return (
@@ -120,22 +123,22 @@ export default function Services() {
               onMouseEnter={() => setActive(i)}
               onMouseLeave={() => setActive(null)}
               onClick={() => setActive(open ? null : i)}
-              className={`transition-colors duration-500 ${open ? "bg-white/[0.025]" : ""}`}
+              className={`transition-colors duration-500 ${open ? "bg-ink/[0.04]" : ""}`}
             >
               <div className="px-1 md:px-2 py-7 md:py-9 grid grid-cols-12 items-center gap-3 md:gap-4">
-                <span className={`col-span-2 md:col-span-1 font-mono text-xs transition-colors duration-300 ${open ? "text-gold" : "text-paper/40"}`}>
+                <span className={`col-span-2 md:col-span-1 font-mono text-xs transition-colors duration-300 ${open ? "text-gold-deep" : "text-gold-deep/60"}`}>
                   {s.n}
                 </span>
                 <h3
                   className={`col-span-10 md:col-span-6 font-display font-semibold uppercase leading-none text-lg md:text-3xl xl:text-[2.4vw] transition-all duration-500 ${
-                    open ? "text-paper md:translate-x-3" : "text-paper/75"
+                    open ? "text-ink md:translate-x-3" : "text-ink/70"
                   }`}
                 >
                   {s.title}
                 </h3>
-                <div className="hidden md:block md:col-span-2 font-mono text-[11px] text-paper/50">{s.price}</div>
-                <div className="hidden md:block md:col-span-1 font-mono text-[11px] text-paper/40">{s.time}</div>
-                <div className="hidden md:flex md:col-span-2 justify-end pr-2 opacity-70">
+                <div className="hidden md:block md:col-span-2 font-mono text-[11px] text-ink/55">{s.price}</div>
+                <div className="hidden md:block md:col-span-1 font-mono text-[11px] text-ink/45">{s.time}</div>
+                <div className="hidden md:flex md:col-span-2 justify-end pr-2 opacity-80">
                   <ServiceAnim type={s.anim} on={open} />
                 </div>
               </div>
@@ -144,7 +147,7 @@ export default function Services() {
                 style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
               >
                 <div className="overflow-hidden">
-                  <p className="px-1 md:px-2 pb-8 md:pb-9 md:pl-[calc(8.333%+1rem)] text-sm leading-relaxed text-paper/55 max-w-xl">
+                  <p className="px-1 md:px-2 pb-8 md:pb-9 md:pl-[calc(8.333%+1rem)] text-sm leading-relaxed text-ink/60 max-w-xl">
                     {s.desc}
                   </p>
                 </div>

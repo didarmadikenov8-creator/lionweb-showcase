@@ -55,7 +55,10 @@ export default function Estimator() {
   const waHref = `${CONTACT.whatsapp}?text=${encodeURIComponent(msg)}`;
 
   return (
-    <section id="estimate" className="px-5 md:px-10 py-24 md:py-36">
+    <section
+      id="estimate"
+      className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
+    >
       <FadeUp>
         <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ РАСЧЁТ СТОИМОСТИ ]</div>
         <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">

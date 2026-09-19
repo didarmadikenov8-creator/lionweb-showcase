@@ -166,7 +166,7 @@ function DesktopGallery() {
           </div>
         </motion.div>
 
-        <div className="absolute bottom-8 left-[8vw] right-[10vw] h-px bg-white/10">
+        <div className="absolute bottom-14 left-[8vw] right-[10vw] h-px bg-white/10">
           <motion.div className="h-full bg-gold origin-left" style={{ scaleX: scrollYProgress }} />
         </div>
       </div>

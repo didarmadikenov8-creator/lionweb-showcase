@@ -59,21 +59,26 @@ export function RevealLine({ children, delay = 0, ready = true, className = "" }
   );
 }
 
-/* overflow-hidden vertical typography reveal — on scroll into view */
+/* overflow-hidden vertical typography reveal — on scroll into view.
+   whileInView sits on the outer (untransformed) span so IntersectionObserver
+   measures the real box; the inner span performs the clipped motion. */
 export function RevealLineInView({ children, delay = 0, className = "" }) {
   const reduced = useReducedMotion();
   return (
-    <span className={`block overflow-hidden ${className}`}>
+    <motion.span
+      className={`block overflow-hidden ${className}`}
+      initial={reduced ? false : "hidden"}
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <motion.span
         className="block"
-        initial={{ y: "112%" }}
-        whileInView={{ y: "0%" }}
-        viewport={{ once: true, amount: 0.2 }}
+        variants={{ hidden: { y: "112%" }, visible: { y: "0%" } }}
         transition={{ duration: reduced ? 0 : 0.95, ease: EASE, delay }}
       >
         {children}
       </motion.span>
-    </span>
+    </motion.span>
   );
 }
 

@@ -10,22 +10,21 @@ const SERVICES = [
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative border-t border-white/[0.07] bg-ink px-5 md:px-10 pt-16 md:pt-20 pb-8 overflow-hidden">
-      <div className="grid md:grid-cols-12 gap-10 md:gap-8">
-        <div className="md:col-span-5">
-          <div className="font-display font-semibold text-lg uppercase">
+    <footer className="relative bg-ink px-5 md:px-10 pt-12 md:pt-16 pb-6 overflow-hidden">
+      <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-8">
+        <div className="col-span-2 md:col-span-5">
+          <div className="font-display font-semibold text-base md:text-lg uppercase">
             LIONWEB<span className="text-gold">®</span>
             <span className="text-paper/35">.KZ</span>
           </div>
-          <p className="mt-5 text-sm leading-relaxed text-paper/45 max-w-xs">
-            Digital-агентство. Сайты, интернет-магазины, мобильные приложения и SEO — цифровая территория вашего
-            бизнеса.
+          <p className="mt-3 text-[13px] leading-relaxed text-paper/45 max-w-xs">
+            Digital-агентство. Сайты, интернет-магазины, мобильные приложения и SEO.
           </p>
         </div>
 
         <div className="md:col-span-3">
           <div className="font-mono text-[10px] tracking-[0.3em] text-gold">УСЛУГИ</div>
-          <ul className="mt-5 space-y-2.5 text-sm text-paper/60">
+          <ul className="mt-4 space-y-2 text-[13px] text-paper/60">
             {SERVICES.map((s) => (
               <li key={s.label}>
                 <a
@@ -46,7 +45,7 @@ export default function Footer() {
 
         <div className="md:col-span-2">
           <div className="font-mono text-[10px] tracking-[0.3em] text-gold">СОЦСЕТИ</div>
-          <ul className="mt-5 space-y-2.5 text-sm">
+          <ul className="mt-4 space-y-2 text-[13px]">
             <li>
               <a
                 href={CONTACT.instagram}
@@ -74,29 +73,29 @@ export default function Footer() {
 
         <div className="md:col-span-2">
           <div className="font-mono text-[10px] tracking-[0.3em] text-gold">АДРЕС</div>
-          <div className="mt-5 text-sm text-paper/60 leading-relaxed">
+          <div className="mt-4 text-[13px] text-paper/60 leading-relaxed">
             {CONTACT.address.split(",")[0]}
             <br />
             {CONTACT.address.split(",")[1]}
           </div>
-          <a href={CONTACT.phoneHref} data-testid="footer-phone" className="mt-4 block text-sm text-paper/60 hover:text-gold transition-colors">
+          <a href={CONTACT.phoneHref} data-testid="footer-phone" className="mt-3 block text-[13px] text-paper/60 hover:text-gold transition-colors">
             {CONTACT.phone}
           </a>
         </div>
       </div>
 
-      <div className="mt-16 md:mt-24 overflow-hidden">
+      <div className="mt-10 md:mt-12 flex items-end justify-between gap-6">
         <div
-          className="font-display font-extrabold uppercase leading-[0.8] text-[19vw] whitespace-nowrap text-center select-none translate-y-[14%] lion-gold-outline"
+          className="font-display font-extrabold uppercase leading-[0.8] text-[13.5vw] md:text-[10.5vw] whitespace-nowrap select-none lion-gold-outline -mb-[1.5vw] md:-mb-[1vw]"
           data-testid="footer-word"
         >
           LIONWEB®
         </div>
-      </div>
-
-      <div className="relative flex flex-col sm:flex-row justify-between gap-2 font-mono text-[9px] tracking-[0.25em] text-paper/30 pt-6">
-        <span>© {year} LIONWEB® — DIGITAL TERRITORY</span>
-        <span>АЛМАТЫ, КАЗАХСТАН</span>
+        <div className="shrink-0 text-right font-mono text-[9px] tracking-[0.2em] text-paper/30 pb-2 md:pb-4">
+          © {year} LIONWEB®
+          <br />
+          DIGITAL TERRITORY
+        </div>
       </div>
     </footer>
   );
