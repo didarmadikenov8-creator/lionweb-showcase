@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { FadeUp } from "./motion-primitives";
+import { motion, useReducedMotion } from "framer-motion";
+import { FadeUp, RevealLineInView, EASE } from "./motion-primitives";
 
 const SERVICES = [
   { n: "01", title: "LANDING PAGE", price: "от 80 000 ₸", time: "2–4 дня", anim: "browser", desc: "Одностраничный сайт с фокусом на конверсию и быстрый запуск." },
@@ -92,23 +93,29 @@ function ServiceAnim({ type, on }) {
 
 export default function Services() {
   const [active, setActive] = useState(null);
+  const reduced = useReducedMotion();
 
   return (
-    <section
+    <motion.section
       id="services"
+      initial={reduced ? false : { y: 56 }}
+      whileInView={{ y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 1.1, ease: EASE }}
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ivory text-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
     >
-      <FadeUp>
-        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold-deep font-medium">[ УСЛУГИ ]</div>
-        <div className="mt-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h2 className="font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
-            Что мы
-            <br />
+      <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold-deep font-medium">[ УСЛУГИ ]</div>
+      <div className="mt-6 flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <h2 className="font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
+          <RevealLineInView>Что мы</RevealLineInView>
+          <RevealLineInView delay={0.07}>
             <span className="md:pl-[8vw] inline-block">создаём</span>
-          </h2>
+          </RevealLineInView>
+        </h2>
+        <FadeUp delay={0.15}>
           <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-[#444444] shrink-0">06 НАПРАВЛЕНИЙ</div>
-        </div>
-      </FadeUp>
+        </FadeUp>
+      </div>
 
       <FadeUp delay={0.1} className="mt-14 md:mt-20 border-t border-b border-ink/15 divide-y divide-ink/15">
         {SERVICES.map((s, i) => {
@@ -156,6 +163,6 @@ export default function Services() {
           );
         })}
       </FadeUp>
-    </section>
+    </motion.section>
   );
 }

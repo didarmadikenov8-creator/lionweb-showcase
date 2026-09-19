@@ -60,7 +60,7 @@ export default function Statement() {
         {METRICS.map((m) => (
           <FadeUp
             key={m.label}
-            className="grid grid-cols-12 items-baseline gap-4 border-b border-white/10 py-8 md:py-12"
+            className="relative grid grid-cols-12 items-baseline gap-4 border-b border-white/10 py-8 md:py-12"
           >
             <div className="col-span-7 md:col-span-5 font-display font-semibold text-6xl md:text-8xl leading-none">
               <CountUp value={m.value} suffix={m.suffix} />
@@ -68,6 +68,13 @@ export default function Statement() {
             <div className="col-span-5 md:col-span-7 text-right font-mono text-[12px] md:text-[15px] tracking-[0.18em] text-paper/50 font-medium">
               {m.label}
             </div>
+            <motion.div
+              className="absolute bottom-0 left-0 right-0 h-px bg-gold origin-left"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true, amount: 0.6 }}
+              transition={{ duration: 1.8, ease: EASE }}
+            />
           </FadeUp>
         ))}
       </div>

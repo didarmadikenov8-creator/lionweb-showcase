@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FadeUp, EASE } from "./motion-primitives";
+import { FadeUp, RevealLineInView, EASE } from "./motion-primitives";
 
 const TEAM = [
   { name: "Садуақас Арыстан", role: "Директор", initials: "СА", tone: "#C5A059" },
@@ -44,12 +44,13 @@ export default function Team() {
     >
       <FadeUp>
         <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">[ КОМАНДА ]</div>
-        <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
-          Люди
-          <br />
-          <span className="md:pl-[8vw] inline-block">за проектами.</span>
-        </h2>
       </FadeUp>
+      <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
+        <RevealLineInView>Люди</RevealLineInView>
+        <RevealLineInView delay={0.07}>
+          <span className="md:pl-[8vw] inline-block">за проектами.</span>
+        </RevealLineInView>
+      </h2>
 
       <div className="mt-14 md:mt-20 grid lg:grid-cols-2 gap-10 lg:gap-16 items-stretch">
         <div className="relative h-[70vw] sm:h-[55vh] lg:h-[68vh] border border-white/[0.06] bg-[#0C0B09] overflow-hidden" data-testid="team-portrait">

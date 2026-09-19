@@ -36,8 +36,8 @@ export default function Cursor() {
 
   if (!fine) return null;
 
-  const label = { view: "VIEW ↗", go: "GO ↗" }[variant];
-  const big = variant === "view" || variant === "go";
+  const label = { view: "VIEW ↗", go: "GO ↗", drag: "DRAG" }[variant];
+  const big = variant === "view" || variant === "go" || variant === "drag";
 
   return (
     <>

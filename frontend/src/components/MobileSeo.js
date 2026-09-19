@@ -191,27 +191,39 @@ function PlayScreen() {
 
 function IphoneMock() {
   return (
-    <div className="flex flex-col items-center gap-4 md:gap-5">
+    <motion.div
+      initial={{ x: -48, y: 48, opacity: 0 }}
+      whileInView={{ x: 0, y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 1.1, ease: EASE }}
+      className="flex flex-col items-center gap-4 md:gap-5"
+    >
       <PhoneFrame floatDelay={0}>
         <AppStoreScreen />
       </PhoneFrame>
       <div className="font-body text-[13px] md:text-[15px] text-paper/70" data-testid="label-appstore">
         Доступно в App Store
       </div>
-    </div>
+    </motion.div>
   );
 }
 
 function AndroidMock() {
   return (
-    <div className="flex flex-col items-center gap-4 md:gap-5">
+    <motion.div
+      initial={{ x: 48, y: 56, opacity: 0 }}
+      whileInView={{ x: 0, y: 0, opacity: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 1, ease: EASE, delay: 0.15 }}
+      className="flex flex-col items-center gap-4 md:gap-5"
+    >
       <PhoneFrame android floatDelay={1}>
         <PlayScreen />
       </PhoneFrame>
       <div className="font-body text-[13px] md:text-[15px] text-paper/70" data-testid="label-googleplay">
         Доступно в Google Play
       </div>
-    </div>
+    </motion.div>
   );
 }
 

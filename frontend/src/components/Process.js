@@ -1,6 +1,6 @@
 import { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { FadeUp } from "./motion-primitives";
+import { motion, useScroll, useTransform, useInView, useReducedMotion } from "framer-motion";
+import { FadeUp, RevealLineInView, EASE } from "./motion-primitives";
 
 const STEPS = [
   { n: "01", title: "Аналитика", desc: "Погружаемся в бизнес, рынок и задачи." },
@@ -42,24 +42,28 @@ function Step({ s, i }) {
 
 export default function Process() {
   const ref = useRef(null);
+  const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.75", "end 0.6"] });
   const scaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section
+    <motion.section
       id="process"
+      initial={reduced ? false : { y: 56 }}
+      whileInView={{ y: 0 }}
+      viewport={{ once: true, amount: 0.05 }}
+      transition={{ duration: 1.1, ease: EASE }}
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ivory text-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
     >
-      <FadeUp>
-        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold-deep font-medium">[ ПРОЦЕСС ]</div>
-        <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
-          От идеи
-          <br />
+      <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold-deep font-medium">[ ПРОЦЕСС ]</div>
+      <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
+        <RevealLineInView>От идеи</RevealLineInView>
+        <RevealLineInView delay={0.07}>
           <span className="md:pl-[8vw] inline-block">
             до запуска<span className="text-gold-deep">.</span>
           </span>
-        </h2>
-      </FadeUp>
+        </RevealLineInView>
+      </h2>
 
       <div ref={ref} className="relative mt-16 md:mt-24">
         <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-ink/10" />
@@ -78,6 +82,6 @@ export default function Process() {
           <span className="text-ink">Дизайн под конкретный бизнес.</span>
         </p>
       </FadeUp>
-    </section>
+    </motion.section>
   );
 }
