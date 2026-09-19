@@ -160,9 +160,9 @@ export default function Estimator() {
                 rel="noreferrer"
                 data-cursor="go"
                 data-testid="estimator-whatsapp-cta"
-                className="w-full bg-gold text-ink px-8 py-5 font-mono text-[13px] md:text-[15px] tracking-[0.12em] hover:bg-gold-light transition-colors duration-300 flex items-center justify-between gap-6"
+                className="btn-gold w-full flex justify-between px-8 py-5"
               >
-                ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ В WHATSAPP <span>↗</span>
+                ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ В WHATSAPP <span className="arr">↗</span>
               </a>
             </Magnetic>
             <a

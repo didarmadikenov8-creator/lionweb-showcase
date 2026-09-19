@@ -94,9 +94,9 @@ export default function Hero({ ready }) {
               rel="noreferrer"
               data-cursor="go"
               data-testid="hero-cta"
-              className="btn-gold-ghost"
+              className="inline-flex btn-gold"
             >
-              [ ОБСУДИТЬ ПРОЕКТ ↗ ]
+              [ ОБСУДИТЬ ПРОЕКТ <span className="arr">↗</span> ]
             </a>
           </Magnetic>
           <button

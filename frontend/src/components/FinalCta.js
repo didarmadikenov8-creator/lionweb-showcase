@@ -37,9 +37,9 @@ export default function FinalCta() {
               rel="noreferrer"
               data-cursor="go"
               data-testid="final-cta"
-              className="inline-flex items-center gap-4 bg-gold text-ink px-10 md:px-12 py-5 md:py-6 font-mono text-[13px] md:text-[15px] tracking-[0.12em] hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex btn-gold px-10 md:px-12 py-5 md:py-6"
             >
-              ОБСУДИТЬ ПРОЕКТ <span>↗</span>
+              ОБСУДИТЬ ПРОЕКТ <span className="arr">↗</span>
             </a>
           </Magnetic>
           <div className="flex items-center gap-6 md:gap-8 font-mono text-[14px] md:text-[16px] tracking-[0.08em]">

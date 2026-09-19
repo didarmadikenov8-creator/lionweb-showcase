@@ -75,9 +75,9 @@ export default function Nav() {
                 rel="noreferrer"
                 data-cursor="go"
                 data-testid="nav-cta"
-                className="hidden sm:inline-flex font-mono text-[12px] md:text-[15px] tracking-[0.12em] text-gold border border-gold/40 px-4 py-2.5 hover:bg-gold hover:text-ink transition-colors duration-300"
+                className="hidden sm:inline-flex btn-gold px-4 py-2.5"
               >
-                [ ОБСУДИТЬ ПРОЕКТ ↗ ]
+                [ ОБСУДИТЬ ПРОЕКТ <span className="arr">↗</span> ]
               </a>
             </Magnetic>
             <button
