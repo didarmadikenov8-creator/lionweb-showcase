@@ -1,0 +1,153 @@
+{
+  "project_name": "LIONWEB.KZ — Digital Territory",
+  "design_concept": "Editorial Architectural Dark Luxury Agency Landing Page",
+  "theme": "Dark Editorial",
+  "typography": {
+    "font_families": {
+      "heading": "'Syne', 'Unbounded', 'Cormorant Garamond', sans-serif",
+      "body": "'Plus Jakarta Sans', 'Inter', system-ui, sans-serif",
+      "mono": "'JetBrains Mono', 'Courier New', monospace"
+    },
+    "cyrillic_support": true,
+    "scale_rules": {
+      "hero_headline": "text-[12vw] sm:text-[14vw] md:text-[16vw] lg:text-[18vw] leading-[0.85] tracking-tighter uppercase font-black",
+      "section_title": "text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight uppercase",
+      "subtitle": "text-lg sm:text-xl text-[#8A8780] font-light tracking-wide uppercase",
+      "body": "text-base sm:text-lg text-[#F3F0E9]/80 leading-relaxed font-normal",
+      "label": "text-xs uppercase tracking-[0.25em] text-[#C5A059] font-mono"
+    }
+  },
+  "colors": {
+    "background_primary": "#080808",
+    "background_secondary": "#0B0B0B",
+    "background_elevated": "#121211",
+    "text_primary": "#F3F0E9",
+    "text_muted": "#8A8780",
+    "accent_gold": "#C5A059",
+    "accent_gold_bright": "#D4AF37",
+    "accent_gold_muted": "rgba(197, 160, 89, 0.2)",
+    "border_subtle": "#1E1D1B",
+    "border_gold_thin": "rgba(197, 160, 89, 0.4)",
+    "forbidden_colors": [
+      "#7351B7",
+      "#1B93A4",
+      "neon green",
+      "cyan",
+      "purple",
+      "rainbow gradients"
+    ]
+  },
+  "brand_identity": {
+    "lion_mark": "Abstract thin gold mane and crown geometry composed of 0.75px–1.5px gold lines (#C5A059), responsive to scroll and hover state vector animations.",
+    "aesthetic_guidelines": [
+      "Editorial, architectural, and cinematic feel with extreme asymmetrical compositions.",
+      "Strict density alternation: contrast high-density editorial blocks with massive negative space (150–200vh height sections).",
+      "Cardless visual hierarchy using 1px razor gold/dark borders instead of rounded shadowed cards.",
+      "Zero stock photos: replace visual placeholders with architectural raw render photography and abstract editorial portraits.",
+      "Zero emojis: use sharp geometric glyphs, Roman numerals, or inline technical specs."
+    ]
+  },
+  "layout_and_grid": {
+    "grid_columns": "12-column asymmetric editorial grid (grid-cols-1 md:grid-cols-12 gap-6 lg:gap-12)",
+    "section_spacing": "py-24 md:py-36 lg:py-48 px-6 md:px-12 lg:px-20",
+    "container_max_width": "max-w-[1800px] mx-auto"
+  },
+  "image_urls": {
+    "architectural_hero": "https://images.unsplash.com/photo-1782015941315-c879b97866de?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxkYXJrJTIwYXJjaGl0ZWN0dXJhbCUyMGx1eHVyeSUyMGludGVyaW9yJTIwbWluaW1hbCUyMGdvbGQlMjBhY2NlbnR8ZW58MHx8fHwxNzg5ODQyNTU4fDA&ixlib=rb-4.1.0&q=85",
+    "portfolio_project_1": "https://images.unsplash.com/photo-1552925766-63ab07391e02?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHw0fHxkYXJrJTIwbHV4dXJ5JTIwYXJjaGl0ZWN0dXJlJTIwbXVzZXVtJTIwZmFjYWRlJTIwZ2VvbWV0cmljJTIwc2hhZG93fGVufDB8fHx8MTc4OTg0MjU2Mnww&ixlib=rb-4.1.0&q=85",
+    "portfolio_project_2": "https://images.unsplash.com/photo-1514496485825-8f86894d189e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxkYXJrJTIwbHV4dXJ5JTIwYXJjaGl0ZWN0dXJlJTIwbXVzZXVtJTIwZmFjYWRlJTIwZ2VvbWV0cmljJTIwc2hhZG93fGVufDB8fHx8MTc4OTg0MjU2Mnww&ixlib=rb-4.1.0&q=85",
+    "portfolio_project_3": "https://images.pexels.com/photos/8775038/pexels-photo-8775038.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "editorial_team_1": "https://images.unsplash.com/photo-1759925847116-822f7206544b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHw0fHxtaW5pbWFsJTIwZWRpdG9yaWFsJTIwcG9ydHJhaXQlMjBkYXJrJTIwbW9kZWwlMjBibGFjayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzg5ODQyNTU4fDA&ixlib=rb-4.1.0&q=85",
+    "editorial_team_2": "https://images.unsplash.com/photo-1764520755679-867cd287fab9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAxODF8MHwxfHNlYXJjaHwyfHxtaW5pbWFsJTIwZWRpdG9yaWFsJTIwcG9ydHJhaXQlMjBkYXJrJTIwbW9kZWwlMjBibGFjayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzg5ODQyNTU4fDA&ixlib=rb-4.1.0&q=85",
+    "editorial_team_3": "https://images.pexels.com/photos/19977587/pexels-photo-19977587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+  },
+  "sections": [
+    {
+      "id": "preloader",
+      "name": "Line Art Preloader",
+      "description": "Minimal full-screen intro with abstract gold mane geometry drawing animation and percentage counter (00-100%)."
+    },
+    {
+      "id": "floating_nav",
+      "name": "Architectural Floating Nav",
+      "description": "Fixed header with gold abstract lion logo mark, Kazakhstan language indicator (KZ/EN/RU), navigation coordinates, and minimalist contact button."
+    },
+    {
+      "id": "hero",
+      "name": "Cinematic Hero",
+      "description": "Overwhelming 12-18vw grotesk typography 'DIGITAL TERRITORY', abstract lion crown gold geometry, location tag (ALMATY, KZ // 43.2389° N), and scroll velocity trigger."
+    },
+    {
+      "id": "statement_metrics",
+      "name": "Scroll-Driven Statement + Metrics",
+      "description": "150-200vh storytelling block with sticky editorial manifesto text and gold accent counters (+340% Performance, 99.8% Speed Score, 4.8M Kazakh Tenge ROI)."
+    },
+    {
+      "id": "portfolio_gallery",
+      "name": "Horizontal Portfolio Gallery",
+      "description": "Horizontal scroll showcase of premium web architecture cases (Astana Luxury Real Estate, Nomad FinTech, Qazaq Spirits, Silk Road Motors)."
+    },
+    {
+      "id": "services_index",
+      "name": "Numbered Services Index",
+      "description": "Architectural grid (01 - Digital Architecture, 02 - E-Commerce Flagships, 03 - Brand Identity Systems, 04 - High-Load Web Solutions) with hover gold line reveals."
+    },
+    {
+      "id": "project_estimator",
+      "name": "Interactive Estimator",
+      "description": "Custom project cost & timeline calculator with gold sliders, scope toggles, and live price summary in KZT / USD."
+    },
+    {
+      "id": "performance_split",
+      "name": "Mobile + SEO Split View",
+      "description": "Side-by-side interactive comparison showing raw code efficiency, Mobile Lighthouse 100/100 metrics, and organic search dominant hierarchy."
+    },
+    {
+      "id": "process_timeline",
+      "name": "Process Timeline",
+      "description": "Asymmetrical 4-stage architectural roadmap (Audit & Discovery -> Spatial Wireframing -> Code Crafting -> Deployment & Dominance)."
+    },
+    {
+      "id": "editorial_team",
+      "name": "Editorial Team",
+      "description": "High-fashion dark monochrome portraits of agency founders and design architects with hover detail reveals."
+    },
+    {
+      "id": "philosophy_manifesto",
+      "name": "Philosophy & Manifesto",
+      "description": "Massive typographic stance against generic digital templates and 'AI slop' websites."
+    },
+    {
+      "id": "final_cta",
+      "name": "Final CTA",
+      "description": "Monumental typography booking trigger 'CLAIM YOUR TERRITORY' with direct consultation form."
+    },
+    {
+      "id": "footer",
+      "name": "Architectural Footer",
+      "description": "10vw giant brand mark, Kazakh office coordinates, system status (ALL SYSTEMS OPTIMAL), and copyright info."
+    },
+    {
+      "id": "custom_cursor",
+      "name": "Custom Cursor System",
+      "description": "Gold ring cursor with subtle inertia trailing and magnetic hover state expander."
+    }
+  ],
+  "testing_requirements": {
+    "data_testid_policy": "All interactive elements (buttons, nav links, estimator inputs, toggles, filter buttons, modals, form fields) MUST include unique kebab-case data-testid attributes.",
+    "examples": [
+      "data-testid=\"nav-brand-logo\"",
+      "data-testid=\"hero-cta-button\"",
+      "data-testid=\"estimator-budget-slider\"",
+      "data-testid=\"service-item-01\"",
+      "data-testid=\"contact-form-submit\""
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build a single-page React app (JavaScript .js files) matching all requirements.",
+    "Import Google Fonts Syne and Plus Jakarta Sans in index.html.",
+    "Enforce deep dark background #080808 / #0B0B0B with warm off-white #F3F0E9 text and warm metallic gold #C5A059 accents.",
+    "Do NOT use glassmorphism excess or rounded-xl soft cards. Use sharp or subtle 1px border cards with background elevation #0B0B0B / #121211.",
+    "All interactive components must have proper state management and micro-interactions powered by Framer Motion."
+  ]
+}
