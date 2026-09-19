@@ -175,66 +175,90 @@ function DesktopGallery() {
 }
 
 function MobileGallery() {
-  return (
-    <section className="lg:hidden px-5 pt-24 pb-4" data-testid="portfolio-mobile">
-      <FadeUp>
-        <div className="font-mono text-[13px] tracking-[0.2em] text-gold font-medium">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
-        <h2 className="mt-6 font-display font-semibold uppercase leading-[1.06] text-3xl">
-          Не рассказываем.
-          <br />
-          <span className="text-gold">Показываем.</span>
-        </h2>
-      </FadeUp>
+  const trackRef = useRef(null);
+  const [active, setActive] = useState(0);
 
-      <div className="mt-12 space-y-16">
-        {PROJECTS.map((p, i) => (
-          <FadeUp key={p.id} amount={0.15}>
-            <article data-testid={`project-${p.id}`}>
-              <div className="flex items-baseline justify-between mb-3">
-                <span className="font-mono text-[13px] text-gold">{p.index} /</span>
-                <span className="font-mono text-[13px] text-paper/40">{p.category}</span>
-              </div>
-              <div className="relative overflow-hidden border border-white/[0.06] bg-[#0D0C0A] h-[64vw] min-h-[250px]">
-                <ProjectVisual p={p} />
-              </div>
-              <h3 className="mt-4 font-display font-semibold uppercase text-2xl">{p.name}</h3>
-              <div className="mt-4 grid grid-cols-2 gap-3 font-mono text-[13px] text-paper/55">
-                <div>
-                  <div className="text-paper/30 tracking-[0.15em]">БЮДЖЕТ</div>
-                  <div className="text-gold mt-1.5">{p.price ?? "В РАЗРАБОТКЕ"}</div>
-                </div>
-                <div>
-                  <div className="text-paper/30 tracking-[0.15em]">СРОК</div>
-                  <div className="mt-1.5">{p.time ?? "—"}</div>
-                </div>
-              </div>
-              {p.url ? (
-                <a
-                  href={p.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  data-testid={`project-link-${p.id}`}
-                  className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-gold link-line font-medium"
-                >
-                  VIEW PROJECT ↗
-                </a>
-              ) : (
-                <span className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-paper/40">СКОРО</span>
-              )}
-            </article>
-          </FadeUp>
-        ))}
+  const onTrackScroll = () => {
+    const el = trackRef.current;
+    if (!el || el.children.length < 2) return;
+    const step = el.children[1].offsetLeft - el.children[0].offsetLeft;
+    const i = Math.min(PROJECTS.length - 1, Math.max(0, Math.round(el.scrollLeft / step)));
+    setActive(i);
+  };
+
+  return (
+    <section className="lg:hidden pt-24 pb-4" data-testid="portfolio-mobile">
+      <div className="px-5">
+        <FadeUp>
+          <div className="font-mono text-[13px] tracking-[0.2em] text-gold font-medium">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
+          <h2 className="mt-6 font-display font-semibold uppercase leading-[1.06] text-3xl">
+            Не рассказываем.
+            <br />
+            <span className="text-gold">Показываем.</span>
+          </h2>
+        </FadeUp>
+        <div className="mt-6 font-mono text-[13px] tracking-[0.2em]" data-testid="portfolio-progress">
+          <span className="text-gold font-medium">0{active + 1}</span>
+          <span className="text-paper/35"> / 06</span>
+        </div>
       </div>
 
-      <a
-        href="https://lionweb.kz"
-        target="_blank"
-        rel="noreferrer"
-        data-testid="all-projects-mobile"
-        className="mt-16 mb-8 block border border-gold/40 py-4 text-center font-mono text-sm tracking-[0.18em] text-gold active:bg-gold active:text-ink transition-colors"
+      <div
+        ref={trackRef}
+        onScroll={onTrackScroll}
+        data-testid="portfolio-track"
+        className="mt-8 flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide px-5 pb-2"
+        style={{ overscrollBehaviorX: "contain", scrollPaddingLeft: "20px", WebkitOverflowScrolling: "touch" }}
       >
-        [ ВСЕ ПРОЕКТЫ ↗ ]
-      </a>
+        {PROJECTS.map((p) => (
+          <article key={p.id} data-slide data-testid={`project-${p.id}`} className="w-[82vw] shrink-0 snap-start">
+            <div className="flex items-baseline justify-between mb-3">
+              <span className="font-mono text-[13px] text-gold">{p.index} /</span>
+              <span className="font-mono text-[13px] text-paper/40">{p.category}</span>
+            </div>
+            <div className="relative overflow-hidden border border-white/[0.06] bg-[#0D0C0A] h-[64vw] min-h-[250px]">
+              <ProjectVisual p={p} />
+            </div>
+            <h3 className="mt-4 font-display font-semibold uppercase text-2xl">{p.name}</h3>
+            <div className="mt-4 grid grid-cols-2 gap-3 font-mono text-[13px] text-paper/55">
+              <div>
+                <div className="text-paper/30 tracking-[0.15em]">БЮДЖЕТ</div>
+                <div className="text-gold mt-1.5">{p.price ?? "В РАЗРАБОТКЕ"}</div>
+              </div>
+              <div>
+                <div className="text-paper/30 tracking-[0.15em]">СРОК</div>
+                <div className="mt-1.5">{p.time ?? "—"}</div>
+              </div>
+            </div>
+            {p.url ? (
+              <a
+                href={p.url}
+                target="_blank"
+                rel="noreferrer"
+                data-testid={`project-link-${p.id}`}
+                className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-gold link-line font-medium"
+              >
+                VIEW PROJECT ↗
+              </a>
+            ) : (
+              <span className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-paper/40">СКОРО</span>
+            )}
+          </article>
+        ))}
+        <div className="w-[10vw] shrink-0" aria-hidden="true" />
+      </div>
+
+      <div className="px-5">
+        <a
+          href="https://lionweb.kz"
+          target="_blank"
+          rel="noreferrer"
+          data-testid="all-projects-mobile"
+          className="mt-12 mb-8 block border border-gold/40 py-4 text-center font-mono text-sm tracking-[0.18em] text-gold active:bg-gold active:text-ink transition-colors"
+        >
+          [ ВСЕ ПРОЕКТЫ ↗ ]
+        </a>
+      </div>
     </section>
   );
 }

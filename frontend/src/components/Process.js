@@ -26,13 +26,13 @@ function Step({ s, i }) {
         }}
       />
       <div className={`pl-8 md:pl-0 ${left ? "md:col-start-1 md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"}`}>
-        <div className={`font-mono text-[13px] md:text-[15px] tracking-[0.2em] font-medium transition-colors duration-500 ${active ? "text-gold-deep" : "text-ink/35"}`}>
+        <div className={`font-mono text-[13px] md:text-[15px] tracking-[0.2em] font-medium transition-colors duration-500 ${active ? "text-gold-deep" : "text-[#444444]"}`}>
           {s.n} /
         </div>
-        <h3 className={`mt-2.5 font-display font-semibold uppercase text-xl md:text-3xl transition-colors duration-500 ${active ? "text-ink" : "text-ink/40"}`}>
+        <h3 className={`mt-2.5 font-display font-semibold uppercase text-xl md:text-3xl transition-colors duration-500 ${active ? "text-ink" : "text-[#444444]"}`}>
           {s.title}
         </h3>
-        <p className={`mt-3 text-[15px] md:text-[17px] leading-[1.7] max-w-md transition-colors duration-500 ${left ? "md:ml-auto" : ""} ${active ? "text-ink/60" : "text-ink/35"}`}>
+        <p className={`mt-3 text-[15px] md:text-[17px] leading-[1.7] max-w-md transition-colors duration-500 ${left ? "md:ml-auto" : ""} ${active ? "text-[#3A3833]" : "text-[#444444]"}`}>
           {s.desc}
         </p>
       </div>
@@ -73,7 +73,7 @@ export default function Process() {
 
       <FadeUp className="mt-[8vh] md:mt-[10vh] md:text-right">
         <p className="font-display font-semibold uppercase leading-snug text-lg md:text-3xl">
-          <span className="text-gold-deep">Не шаблон.</span> <span className="text-ink/50">Не конструкторское мышление.</span>
+          <span className="text-gold-deep">Не шаблон.</span> <span className="text-[#444444]">Не конструкторское мышление.</span>
           <br />
           <span className="text-ink">Дизайн под конкретный бизнес.</span>
         </p>

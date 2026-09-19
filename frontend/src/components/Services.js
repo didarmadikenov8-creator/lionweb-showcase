@@ -106,7 +106,7 @@ export default function Services() {
             <br />
             <span className="md:pl-[8vw] inline-block">создаём</span>
           </h2>
-          <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-ink/40 shrink-0">06 НАПРАВЛЕНИЙ</div>
+          <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-[#444444] shrink-0">06 НАПРАВЛЕНИЙ</div>
         </div>
       </FadeUp>
 
@@ -126,18 +126,18 @@ export default function Services() {
               className={`transition-colors duration-500 ${open ? "bg-ink/[0.04]" : ""}`}
             >
               <div className="px-1 md:px-2 py-7 md:py-9 grid grid-cols-12 items-center gap-3 md:gap-4">
-                <span className={`col-span-2 md:col-span-1 font-mono text-[13px] md:text-[15px] transition-colors duration-300 ${open ? "text-gold-deep" : "text-gold-deep/60"}`}>
+                <span className={`col-span-2 md:col-span-1 font-mono text-[13px] md:text-[15px] transition-colors duration-300 ${open ? "text-gold-deep" : "text-gold-deep"}`}>
                   {s.n}
                 </span>
                 <h3
                   className={`col-span-10 md:col-span-6 font-display font-semibold uppercase leading-none text-lg md:text-3xl xl:text-[2.4vw] transition-all duration-500 ${
-                    open ? "text-ink md:translate-x-3" : "text-ink/70"
+                    open ? "text-ink md:translate-x-3" : "text-[#444444]"
                   }`}
                 >
                   {s.title}
                 </h3>
-                <div className="hidden md:block md:col-span-2 font-mono text-[13px] md:text-[15px] text-ink/60">{s.price}</div>
-                <div className="hidden md:block md:col-span-1 font-mono text-[13px] md:text-[15px] text-ink/50">{s.time}</div>
+                <div className="hidden md:block md:col-span-2 font-mono text-[13px] md:text-[15px] text-[#444444]">{s.price}</div>
+                <div className="hidden md:block md:col-span-1 font-mono text-[13px] md:text-[15px] text-[#444444]">{s.time}</div>
                 <div className="hidden md:flex md:col-span-2 justify-end pr-2 opacity-80">
                   <ServiceAnim type={s.anim} on={open} />
                 </div>
@@ -147,7 +147,7 @@ export default function Services() {
                 style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
               >
                 <div className="overflow-hidden">
-                  <p className="px-1 md:px-2 pb-8 md:pb-9 md:pl-[calc(8.333%+1rem)] text-[15px] md:text-[17px] leading-[1.7] text-ink/60 max-w-xl">
+                  <p className="px-1 md:px-2 pb-8 md:pb-9 md:pl-[calc(8.333%+1rem)] text-[15px] md:text-[17px] leading-[1.7] text-[#444444] max-w-xl">
                     {s.desc}
                   </p>
                 </div>

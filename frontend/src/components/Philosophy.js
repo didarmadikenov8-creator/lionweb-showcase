@@ -21,7 +21,7 @@ export default function Philosophy() {
         </RevealLineInView>
       </h2>
 
-      <FadeUp delay={0.2} className="mt-[10vh] md:mt-[14vh] font-mono text-[13px] md:text-[15px] tracking-[0.18em] text-ink/55 font-medium">
+      <FadeUp delay={0.2} className="mt-[10vh] md:mt-[14vh] font-mono text-[13px] md:text-[15px] tracking-[0.18em] text-[#444444] font-medium">
         ПРОЕКТИРУЕМ <span className="text-gold-deep">·</span> РАЗРАБАТЫВАЕМ <span className="text-gold-deep">·</span> ЗАПУСКАЕМ{" "}
         <span className="text-gold-deep">·</span> ПРОДВИГАЕМ
       </FadeUp>
