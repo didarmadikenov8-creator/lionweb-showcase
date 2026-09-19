@@ -19,7 +19,7 @@ export default function FinalCta() {
       </div>
 
       <div className="relative z-10">
-        <div className="font-mono text-[10px] tracking-[0.35em] text-gold">[ СВЯЗАТЬСЯ ]</div>
+        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.22em] text-gold font-medium">[ СВЯЗАТЬСЯ ]</div>
         <h2 className="mt-8 md:mt-10 font-display font-semibold uppercase leading-[0.98] text-[12.5vw] md:text-[9.5vw]">
           <RevealLineInView>Есть проект?</RevealLineInView>
           <RevealLineInView delay={0.07}>Давайте</RevealLineInView>
@@ -37,12 +37,12 @@ export default function FinalCta() {
               rel="noreferrer"
               data-cursor="go"
               data-testid="final-cta"
-              className="inline-flex items-center gap-4 bg-gold text-ink px-10 md:px-12 py-5 md:py-6 font-mono text-[11px] md:text-xs tracking-[0.2em] hover:bg-gold-light transition-colors duration-300"
+              className="inline-flex items-center gap-4 bg-gold text-ink px-10 md:px-12 py-5 md:py-6 font-mono text-[13px] md:text-[15px] tracking-[0.12em] hover:bg-gold-light transition-colors duration-300"
             >
               ОБСУДИТЬ ПРОЕКТ <span>↗</span>
             </a>
           </Magnetic>
-          <div className="flex items-center gap-6 md:gap-8 font-mono text-xs md:text-sm tracking-[0.12em]">
+          <div className="flex items-center gap-6 md:gap-8 font-mono text-[14px] md:text-[16px] tracking-[0.08em]">
             <a href={CONTACT.phoneHref} data-testid="final-phone" className="text-paper/70 hover:text-gold transition-colors">
               +7 747 274 6859
             </a>

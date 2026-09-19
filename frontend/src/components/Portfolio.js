@@ -72,7 +72,7 @@ function Card({ p }) {
           <span className="font-mono text-xs text-gold">{p.index} /</span>
           <h3 className="font-display font-semibold uppercase text-2xl xl:text-4xl tracking-tight">{p.name}</h3>
         </div>
-        <div className="text-right font-mono text-[11px] leading-relaxed text-paper/50 shrink-0">
+        <div className="text-right font-mono text-[13px] md:text-[15px] leading-relaxed text-paper/55 shrink-0">
           <div>{p.category}</div>
           <div className="text-gold">{p.price ?? "В РАЗРАБОТКЕ"}</div>
           {p.time && <div className="text-paper/40">{p.time}</div>}
@@ -88,7 +88,7 @@ function Card({ p }) {
           <ProjectVisual p={p} />
         </div>
       </motion.div>
-      <div className="mt-4 flex items-center justify-between font-mono text-[10px] tracking-[0.25em]">
+      <div className="mt-4 flex items-center justify-between font-mono text-[12px] md:text-[15px] tracking-[0.18em]">
         <span className="text-paper/40">
           {p.index} — {p.category.toUpperCase()}
         </span>
@@ -99,7 +99,7 @@ function Card({ p }) {
             rel="noreferrer"
             data-cursor="view"
             data-testid={`project-link-${p.id}`}
-            className="text-gold link-line"
+            className="text-gold link-line font-medium"
           >
             VIEW PROJECT ↗
           </a>
@@ -132,13 +132,13 @@ function DesktopGallery() {
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
         <motion.div style={{ x }} className="flex items-center gap-[5vw] pl-[8vw] pr-[10vw] w-max">
           <div className="w-[30vw] shrink-0">
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
             <h2 className="mt-8 font-display font-semibold uppercase leading-[1.04] text-[3.4vw]">
               Не рассказываем.
               <br />
               <span className="text-gold">Показываем.</span>
             </h2>
-            <p className="mt-8 max-w-[22vw] text-sm leading-relaxed text-paper/50">
+            <p className="mt-8 max-w-[24vw] text-[15px] md:text-[17px] leading-[1.7] text-paper/50">
               Интернет-магазины и веб-проекты, созданные Lionweb под конкретный бизнес.
             </p>
             <div className="mt-12 font-mono text-[10px] tracking-[0.3em] text-paper/30">→ SCROLL</div>
@@ -160,7 +160,7 @@ function DesktopGallery() {
               <span className="text-gold">[ </span>Все проекты
               <span className="text-gold"> ↗ ]</span>
             </a>
-            <p className="mt-6 text-sm leading-relaxed text-paper/40 max-w-[18vw]">
+            <p className="mt-6 text-[15px] leading-[1.7] text-paper/40 max-w-[18vw]">
               Полное портфолио — на основном сайте студии.
             </p>
           </div>
@@ -178,7 +178,7 @@ function MobileGallery() {
   return (
     <section className="lg:hidden px-5 pt-24 pb-4" data-testid="portfolio-mobile">
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
+        <div className="font-mono text-[13px] tracking-[0.2em] text-gold font-medium">[ ИЗБРАННЫЕ РАБОТЫ ]</div>
         <h2 className="mt-6 font-display font-semibold uppercase leading-[1.06] text-3xl">
           Не рассказываем.
           <br />
@@ -191,20 +191,20 @@ function MobileGallery() {
           <FadeUp key={p.id} amount={0.15}>
             <article data-testid={`project-${p.id}`}>
               <div className="flex items-baseline justify-between mb-3">
-                <span className="font-mono text-[11px] text-gold">{p.index} /</span>
-                <span className="font-mono text-[10px] text-paper/40">{p.category}</span>
+                <span className="font-mono text-[13px] text-gold">{p.index} /</span>
+                <span className="font-mono text-[13px] text-paper/40">{p.category}</span>
               </div>
               <div className="relative overflow-hidden border border-white/[0.06] bg-[#0D0C0A] h-[64vw] min-h-[250px]">
                 <ProjectVisual p={p} />
               </div>
               <h3 className="mt-4 font-display font-semibold uppercase text-2xl">{p.name}</h3>
-              <div className="mt-4 grid grid-cols-2 gap-3 font-mono text-[10px] text-paper/50">
+              <div className="mt-4 grid grid-cols-2 gap-3 font-mono text-[13px] text-paper/55">
                 <div>
-                  <div className="text-paper/30 tracking-[0.2em]">БЮДЖЕТ</div>
+                  <div className="text-paper/30 tracking-[0.15em]">БЮДЖЕТ</div>
                   <div className="text-gold mt-1.5">{p.price ?? "В РАЗРАБОТКЕ"}</div>
                 </div>
                 <div>
-                  <div className="text-paper/30 tracking-[0.2em]">СРОК</div>
+                  <div className="text-paper/30 tracking-[0.15em]">СРОК</div>
                   <div className="mt-1.5">{p.time ?? "—"}</div>
                 </div>
               </div>
@@ -214,12 +214,12 @@ function MobileGallery() {
                   target="_blank"
                   rel="noreferrer"
                   data-testid={`project-link-${p.id}`}
-                  className="mt-5 inline-block font-mono text-[11px] tracking-[0.25em] text-gold link-line"
+                  className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-gold link-line font-medium"
                 >
                   VIEW PROJECT ↗
                 </a>
               ) : (
-                <span className="mt-5 inline-block font-mono text-[11px] tracking-[0.25em] text-paper/40">СКОРО</span>
+                <span className="mt-5 inline-block font-mono text-[14px] tracking-[0.18em] text-paper/40">СКОРО</span>
               )}
             </article>
           </FadeUp>
@@ -231,7 +231,7 @@ function MobileGallery() {
         target="_blank"
         rel="noreferrer"
         data-testid="all-projects-mobile"
-        className="mt-16 mb-8 block border border-gold/40 py-4 text-center font-mono text-xs tracking-[0.25em] text-gold active:bg-gold active:text-ink transition-colors"
+        className="mt-16 mb-8 block border border-gold/40 py-4 text-center font-mono text-sm tracking-[0.18em] text-gold active:bg-gold active:text-ink transition-colors"
       >
         [ ВСЕ ПРОЕКТЫ ↗ ]
       </a>

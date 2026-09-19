@@ -46,7 +46,7 @@ export default function Nav() {
             href="/"
             onClick={toTop}
             data-testid="nav-logo"
-            className="font-display font-semibold text-sm md:text-base tracking-[0.08em] uppercase"
+            className="font-display font-semibold text-base md:text-lg tracking-[0.08em] uppercase"
           >
             LIONWEB<span className="text-gold">®</span>
             <span className="text-paper/35 hidden sm:inline">.KZ</span>
@@ -59,7 +59,7 @@ export default function Nav() {
                   href={l.hash}
                   onClick={go(l.hash)}
                   data-testid={`nav-link-${l.hash.slice(1)}`}
-                  className="link-line font-body text-[13px] uppercase tracking-[0.14em] text-paper/65 hover:text-paper transition-colors duration-300"
+                  className="link-line font-body text-[15px] uppercase tracking-[0.1em] text-paper/65 hover:text-paper transition-colors duration-300"
                 >
                   {l.label}
                 </a>
@@ -75,7 +75,7 @@ export default function Nav() {
                 rel="noreferrer"
                 data-cursor="go"
                 data-testid="nav-cta"
-                className="hidden sm:inline-flex font-mono text-[10px] tracking-[0.18em] text-gold border border-gold/40 px-4 py-2.5 hover:bg-gold hover:text-ink transition-colors duration-300"
+                className="hidden sm:inline-flex font-mono text-[12px] md:text-[15px] tracking-[0.12em] text-gold border border-gold/40 px-4 py-2.5 hover:bg-gold hover:text-ink transition-colors duration-300"
               >
                 [ ОБСУДИТЬ ПРОЕКТ ↗ ]
               </a>
@@ -115,12 +115,12 @@ export default function Nav() {
                   data-testid={`mobile-nav-${l.hash.slice(1)}`}
                   className="flex items-baseline gap-4 py-3 font-display font-semibold uppercase text-4xl text-paper/85 active:text-gold"
                 >
-                  <span className="font-mono text-[11px] text-gold">0{i + 1}</span>
+                  <span className="font-mono text-[13px] text-gold">0{i + 1}</span>
                   {l.label}
                 </a>
               ))}
             </div>
-            <div className="mt-14 pt-8 border-t border-white/10 space-y-3 font-mono text-xs tracking-[0.2em]">
+            <div className="mt-14 pt-8 border-t border-white/10 space-y-3.5 font-mono text-sm tracking-[0.15em]">
               <a href={CONTACT.phoneHref} className="block text-paper/70">
                 {CONTACT.phone}
               </a>

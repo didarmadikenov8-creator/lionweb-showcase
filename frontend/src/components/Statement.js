@@ -65,7 +65,7 @@ export default function Statement() {
             <div className="col-span-7 md:col-span-5 font-display font-semibold text-6xl md:text-8xl leading-none">
               <CountUp value={m.value} suffix={m.suffix} />
             </div>
-            <div className="col-span-5 md:col-span-7 text-right font-mono text-[10px] md:text-xs tracking-[0.25em] text-paper/50">
+            <div className="col-span-5 md:col-span-7 text-right font-mono text-[12px] md:text-[15px] tracking-[0.18em] text-paper/50 font-medium">
               {m.label}
             </div>
           </FadeUp>

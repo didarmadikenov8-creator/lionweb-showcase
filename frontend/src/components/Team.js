@@ -26,7 +26,7 @@ function Portrait({ m, i }) {
           {m.initials}
         </span>
       </div>
-      <span className="absolute bottom-6 left-6 font-mono text-[10px] tracking-[0.3em] text-gold">
+      <span className="absolute bottom-6 left-6 font-mono text-[13px] md:text-[15px] tracking-[0.15em] text-gold font-medium">
         {m.role.toUpperCase()}
       </span>
     </div>
@@ -43,7 +43,7 @@ export default function Team() {
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
     >
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ КОМАНДА ]</div>
+        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">[ КОМАНДА ]</div>
         <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
           Люди
           <br />
@@ -82,7 +82,7 @@ export default function Team() {
               data-testid={`team-name-${i}`}
               className="w-full text-left border-b border-white/10 py-6 lg:py-9 flex items-baseline gap-5"
             >
-              <span className={`font-mono text-[11px] transition-colors duration-300 ${active === i ? "text-gold" : "text-paper/30"}`}>
+              <span className={`font-mono text-[13px] transition-colors duration-300 ${active === i ? "text-gold" : "text-paper/30"}`}>
                 0{i + 1}
               </span>
               <span
@@ -92,7 +92,7 @@ export default function Team() {
               >
                 {t.name}
               </span>
-              <span className="ml-auto font-mono text-[9px] sm:text-[10px] tracking-[0.25em] text-paper/40 text-right">
+              <span className="ml-auto font-mono text-[12px] md:text-[14px] tracking-[0.12em] text-paper/45 text-right">
                 {t.role.toUpperCase()}
               </span>
             </button>

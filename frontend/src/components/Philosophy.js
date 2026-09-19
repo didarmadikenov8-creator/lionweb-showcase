@@ -7,7 +7,7 @@ export default function Philosophy() {
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ivory text-ink px-5 md:px-10 pt-28 md:pt-44 pb-[18vh] md:pb-[24vh]"
     >
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.35em] text-gold-deep">НАШ ПОДХОД</div>
+        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.22em] text-gold-deep font-medium">НАШ ПОДХОД</div>
       </FadeUp>
 
       <h2 className="mt-14 font-display font-semibold uppercase leading-[1.06] text-[9vw] md:text-[5.8vw]">
@@ -21,7 +21,7 @@ export default function Philosophy() {
         </RevealLineInView>
       </h2>
 
-      <FadeUp delay={0.2} className="mt-[10vh] md:mt-[14vh] font-mono text-[10px] md:text-xs tracking-[0.3em] text-ink/50">
+      <FadeUp delay={0.2} className="mt-[10vh] md:mt-[14vh] font-mono text-[13px] md:text-[15px] tracking-[0.18em] text-ink/55 font-medium">
         ПРОЕКТИРУЕМ <span className="text-gold-deep">·</span> РАЗРАБАТЫВАЕМ <span className="text-gold-deep">·</span> ЗАПУСКАЕМ{" "}
         <span className="text-gold-deep">·</span> ПРОДВИГАЕМ
       </FadeUp>

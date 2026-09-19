@@ -40,14 +40,14 @@ export default function MobileSeo() {
         {/* MOBILE */}
         <motion.div style={{ x: isDesktop && !reduced ? xL : 0 }} className="relative z-10">
           <FadeUp>
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold">01 — MOBILE</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">01 — MOBILE</div>
             <h2 className="mt-5 font-display font-semibold uppercase leading-[1.04] text-4xl md:text-[3.6vw]">
               Мобильные
               <br />
               приложения
             </h2>
-            <div className="mt-5 font-mono text-[11px] tracking-[0.35em] text-gold">iOS / ANDROID</div>
-            <p className="mt-8 text-sm leading-relaxed text-paper/55 max-w-sm">
+            <div className="mt-5 font-mono text-[13px] md:text-[15px] tracking-[0.22em] text-gold">iOS / ANDROID</div>
+            <p className="mt-8 text-[15px] md:text-[17px] leading-[1.7] text-paper/55 max-w-md">
               Проектируем и разрабатываем приложения — от интерфейса до публикации в App Store и Google Play.
             </p>
           </FadeUp>
@@ -60,7 +60,7 @@ export default function MobileSeo() {
         {/* SEO */}
         <motion.div style={{ x: isDesktop && !reduced ? xR : 0 }} className="md:text-right md:mt-32">
           <FadeUp>
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold">02 — SEO</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">02 — SEO</div>
             <h2 className="mt-5 font-display font-semibold uppercase leading-[1.04] text-4xl md:text-[3.6vw]">
               Ваш бизнес
               <br />
@@ -74,7 +74,7 @@ export default function MobileSeo() {
           <div className="mt-12 text-left md:text-right" data-testid="seo-queries">
             {QUERIES.map((q, i) => (
               <div key={q} className="flex items-center gap-4 py-4 border-b border-white/[0.07]">
-                <span className="font-mono text-[11px] text-paper/45 w-36 md:w-44 shrink-0 truncate text-left">{q}</span>
+                <span className="font-mono text-[13px] md:text-[15px] text-paper/55 w-40 md:w-48 shrink-0 truncate text-left">{q}</span>
                 <div className="flex-1 h-px bg-white/10 relative overflow-hidden">
                   <motion.div
                     className="absolute inset-y-0 left-0 bg-gold"
@@ -84,7 +84,7 @@ export default function MobileSeo() {
                     transition={{ duration: 1.4, delay: i * 0.25, ease: EASE }}
                   />
                 </div>
-                <span className="font-mono text-[10px] tracking-[0.2em] text-gold shrink-0">ТОП</span>
+                <span className="font-mono text-[12px] md:text-[14px] tracking-[0.15em] text-gold shrink-0 font-medium">ТОП</span>
               </div>
             ))}
           </div>
@@ -93,7 +93,7 @@ export default function MobileSeo() {
             <div className="font-display font-semibold text-7xl md:text-8xl leading-none">
               <CountUp value={50} suffix="+" />
             </div>
-            <div className="mt-4 font-mono text-[10px] md:text-xs tracking-[0.25em] text-paper/50">
+            <div className="mt-4 font-mono text-[13px] md:text-[15px] tracking-[0.18em] text-paper/50 font-medium">
               САЙТОВ В ТОП GOOGLE И ЯНДЕКС
             </div>
           </FadeUp>

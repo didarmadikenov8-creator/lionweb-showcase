@@ -38,7 +38,7 @@ export default function Hero({ ready }) {
           initial={{ opacity: 0, y: 10 }}
           animate={show(10)}
           transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-          className="font-mono text-[10px] md:text-[11px] tracking-[0.3em] text-paper/60 leading-loose"
+          className="font-mono text-[13px] md:text-[15px] tracking-[0.22em] text-paper/60 leading-loose font-medium"
         >
           DIGITAL AGENCY <span className="text-gold">·</span> ALMATY
           <br />
@@ -48,7 +48,7 @@ export default function Hero({ ready }) {
           initial={{ opacity: 0, y: 10 }}
           animate={show(10)}
           transition={{ duration: 0.8, delay: 0.25, ease: EASE }}
-          className="hidden md:block font-mono text-[10px] tracking-[0.3em] text-paper/30 text-right leading-loose"
+          className="hidden md:block font-mono text-[15px] tracking-[0.22em] text-paper/30 text-right leading-loose"
         >
           САЙТЫ — E-COMMERCE
           <br />
@@ -77,7 +77,7 @@ export default function Hero({ ready }) {
           initial={{ opacity: 0, y: 16 }}
           animate={show(16)}
           transition={{ duration: 0.9, delay: 0.75, ease: EASE }}
-          className="max-w-sm text-sm md:text-[15px] leading-relaxed text-paper/55"
+          className="max-w-md text-[15px] md:text-[17px] leading-[1.7] text-paper/55"
         >
           Разрабатываем сайты, интернет-магазины и мобильные продукты, которые помогают бизнесу расти.
         </motion.p>
@@ -102,7 +102,7 @@ export default function Hero({ ready }) {
           <button
             onClick={() => scrollToHash("#works")}
             data-testid="hero-secondary"
-            className="font-mono text-[10px] md:text-[11px] tracking-[0.25em] text-paper/50 hover:text-paper transition-colors duration-300"
+            className="font-mono text-[13px] md:text-[15px] tracking-[0.18em] text-paper/50 hover:text-paper transition-colors duration-300"
           >
             СМОТРЕТЬ ПРОЕКТЫ ↓
           </button>

@@ -33,8 +33,8 @@ export default function Preloader({ onDone }) {
             transition={{ duration: 0.6, ease: EASE, delay: 0.15 }}
             className="text-center"
           >
-            <div className="font-mono text-[11px] md:text-xs tracking-[0.45em] text-gold">LIONWEB®</div>
-            <div className="font-mono text-[9px] md:text-[10px] tracking-[0.35em] text-paper/40 mt-2.5">
+            <div className="font-mono text-xs md:text-sm tracking-[0.4em] text-gold">LIONWEB®</div>
+            <div className="font-mono text-[11px] md:text-xs tracking-[0.3em] text-paper/40 mt-2.5">
               DIGITAL TERRITORY
             </div>
           </motion.div>

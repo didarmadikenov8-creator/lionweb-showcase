@@ -20,7 +20,7 @@ function Chip({ selected, onClick, children, testid }) {
     <button
       onClick={onClick}
       data-testid={testid}
-      className={`px-5 py-3 border font-mono text-[11px] tracking-[0.12em] uppercase transition-all duration-300 ${
+      className={`px-5 py-3 border font-mono text-[13px] md:text-[15px] tracking-[0.08em] uppercase transition-all duration-300 ${
         selected
           ? "bg-gold text-ink border-gold"
           : "border-white/15 text-paper/70 hover:border-gold/60 hover:text-paper"
@@ -60,7 +60,7 @@ export default function Estimator() {
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
     >
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.3em] text-gold">[ РАСЧЁТ СТОИМОСТИ ]</div>
+        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">[ РАСЧЁТ СТОИМОСТИ ]</div>
         <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
           Сколько стоит
           <br />
@@ -74,7 +74,7 @@ export default function Estimator() {
         {/* steps */}
         <FadeUp delay={0.08} className="lg:col-span-7 space-y-12">
           <div>
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold mb-5">01 / ЧТО СОЗДАЁМ?</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold mb-6 font-medium">01 / ЧТО СОЗДАЁМ?</div>
             <div className="flex flex-wrap gap-2.5">
               {TYPES.map((t) => (
                 <Chip
@@ -90,7 +90,7 @@ export default function Estimator() {
           </div>
 
           <div>
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold mb-5">02 / ЧТО НЕОБХОДИМО?</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold mb-6 font-medium">02 / ЧТО НЕОБХОДИМО?</div>
             <div className="flex flex-wrap gap-2.5">
               {FEATURES.map((f) => (
                 <Chip
@@ -106,7 +106,7 @@ export default function Estimator() {
           </div>
 
           <div>
-            <div className="font-mono text-[10px] tracking-[0.3em] text-gold mb-5">03 / КОГДА ЗАПУСК?</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold mb-6 font-medium">03 / КОГДА ЗАПУСК?</div>
             <div className="flex flex-wrap gap-2.5">
               {SPEED.map((s) => (
                 <Chip key={s.id} testid={`est-speed-${s.id}`} selected={speed && speed.id === s.id} onClick={() => setSpeed(s)}>
@@ -125,7 +125,7 @@ export default function Estimator() {
             <span className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/60" />
             <span className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/60" />
 
-            <div className="font-mono text-[10px] tracking-[0.3em] text-paper/45">{eyebrow}</div>
+            <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-paper/45 font-medium">{eyebrow}</div>
             <div className="mt-5 min-h-[4.5rem] md:min-h-[5rem] flex items-center" data-testid="estimator-price">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -143,13 +143,13 @@ export default function Estimator() {
               </AnimatePresence>
             </div>
 
-            <div className="mt-6 space-y-1.5 font-mono text-[10px] tracking-[0.15em] text-paper/45 uppercase">
+            <div className="mt-6 space-y-2 font-mono text-[13px] md:text-[15px] tracking-[0.08em] text-paper/50 uppercase">
               {type && <div>{type.label}</div>}
               {features.length > 0 && <div>{features.join(" · ")}</div>}
               {speed && <div>Запуск: {speed.label}</div>}
             </div>
 
-            <p className="mt-6 text-xs leading-relaxed text-paper/40">
+            <p className="mt-6 text-[14px] md:text-[15px] leading-[1.7] text-paper/45">
               Финальная стоимость зависит от объёма — точный расчёт после брифа.
             </p>
 
@@ -160,7 +160,7 @@ export default function Estimator() {
                 rel="noreferrer"
                 data-cursor="go"
                 data-testid="estimator-whatsapp-cta"
-                className="w-full bg-gold text-ink px-8 py-5 font-mono text-[11px] tracking-[0.18em] hover:bg-gold-light transition-colors duration-300 flex items-center justify-between gap-6"
+                className="w-full bg-gold text-ink px-8 py-5 font-mono text-[13px] md:text-[15px] tracking-[0.12em] hover:bg-gold-light transition-colors duration-300 flex items-center justify-between gap-6"
               >
                 ПОЛУЧИТЬ ТОЧНЫЙ РАСЧЁТ В WHATSAPP <span>↗</span>
               </a>
@@ -168,7 +168,7 @@ export default function Estimator() {
             <a
               href={CONTACT.phoneHref}
               data-testid="estimator-phone"
-              className="mt-5 block text-center font-mono text-xs tracking-[0.2em] text-paper/55 hover:text-gold transition-colors"
+              className="mt-5 block text-center font-mono text-sm md:text-[15px] tracking-[0.15em] text-paper/55 hover:text-gold transition-colors"
             >
               {CONTACT.phone}
             </a>

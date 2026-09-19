@@ -26,13 +26,13 @@ function Step({ s, i }) {
         }}
       />
       <div className={`pl-8 md:pl-0 ${left ? "md:col-start-1 md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"}`}>
-        <div className={`font-mono text-[11px] tracking-[0.3em] transition-colors duration-500 ${active ? "text-gold-deep" : "text-ink/35"}`}>
+        <div className={`font-mono text-[13px] md:text-[15px] tracking-[0.2em] font-medium transition-colors duration-500 ${active ? "text-gold-deep" : "text-ink/35"}`}>
           {s.n} /
         </div>
         <h3 className={`mt-2.5 font-display font-semibold uppercase text-xl md:text-3xl transition-colors duration-500 ${active ? "text-ink" : "text-ink/40"}`}>
           {s.title}
         </h3>
-        <p className={`mt-3 text-sm max-w-xs leading-relaxed transition-colors duration-500 ${left ? "md:ml-auto" : ""} ${active ? "text-ink/60" : "text-ink/35"}`}>
+        <p className={`mt-3 text-[15px] md:text-[17px] leading-[1.7] max-w-md transition-colors duration-500 ${left ? "md:ml-auto" : ""} ${active ? "text-ink/60" : "text-ink/35"}`}>
           {s.desc}
         </p>
       </div>
@@ -51,7 +51,7 @@ export default function Process() {
       className="relative z-10 -mt-6 md:-mt-10 rounded-t-[2.5rem] md:rounded-t-[4rem] bg-ivory text-ink px-5 md:px-10 pt-28 md:pt-44 pb-24 md:pb-36"
     >
       <FadeUp>
-        <div className="font-mono text-[10px] tracking-[0.3em] text-gold-deep">[ ПРОЦЕСС ]</div>
+        <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold-deep font-medium">[ ПРОЦЕСС ]</div>
         <h2 className="mt-6 font-display font-semibold uppercase leading-[1.02] text-[11vw] md:text-[6.5vw]">
           От идеи
           <br />

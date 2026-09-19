@@ -17,14 +17,14 @@ export default function Footer() {
             LIONWEB<span className="text-gold">®</span>
             <span className="text-paper/35">.KZ</span>
           </div>
-          <p className="mt-3 text-[13px] leading-relaxed text-paper/45 max-w-xs">
+          <p className="mt-3 text-[14px] md:text-[15px] leading-[1.7] text-paper/50 max-w-xs">
             Digital-агентство. Сайты, интернет-магазины, мобильные приложения и SEO.
           </p>
         </div>
 
         <div className="md:col-span-3">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-gold">УСЛУГИ</div>
-          <ul className="mt-4 space-y-2 text-[13px] text-paper/60">
+          <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">УСЛУГИ</div>
+          <ul className="mt-4 space-y-2.5 text-[14px] md:text-[15px] text-paper/60">
             {SERVICES.map((s) => (
               <li key={s.label}>
                 <a
@@ -44,8 +44,8 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-gold">СОЦСЕТИ</div>
-          <ul className="mt-4 space-y-2 text-[13px]">
+          <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">СОЦСЕТИ</div>
+          <ul className="mt-4 space-y-2.5 text-[14px] md:text-[15px]">
             <li>
               <a
                 href={CONTACT.instagram}
@@ -72,13 +72,13 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <div className="font-mono text-[10px] tracking-[0.3em] text-gold">АДРЕС</div>
-          <div className="mt-4 text-[13px] text-paper/60 leading-relaxed">
+          <div className="font-mono text-[13px] md:text-[15px] tracking-[0.2em] text-gold font-medium">АДРЕС</div>
+          <div className="mt-4 text-[14px] md:text-[15px] text-paper/60 leading-[1.7]">
             {CONTACT.address.split(",")[0]}
             <br />
             {CONTACT.address.split(",")[1]}
           </div>
-          <a href={CONTACT.phoneHref} data-testid="footer-phone" className="mt-3 block text-[13px] text-paper/60 hover:text-gold transition-colors">
+          <a href={CONTACT.phoneHref} data-testid="footer-phone" className="mt-3 block text-[14px] md:text-[15px] text-paper/60 hover:text-gold transition-colors">
             {CONTACT.phone}
           </a>
         </div>
@@ -91,7 +91,7 @@ export default function Footer() {
         >
           LIONWEB®
         </div>
-        <div className="shrink-0 text-right font-mono text-[9px] tracking-[0.2em] text-paper/30 pb-2 md:pb-4">
+        <div className="shrink-0 text-right font-mono text-[10px] md:text-[11px] tracking-[0.15em] text-paper/30 pb-2 md:pb-4">
           © {year} LIONWEB®
           <br />
           DIGITAL TERRITORY
